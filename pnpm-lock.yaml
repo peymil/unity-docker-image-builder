@@ -37,7 +37,7 @@ importers:
         specifier: ^3.3.47
         version: 3.3.47
       '@types/node':
-        specifier: ^20.11.24
+        specifier: ^20.19.26
         version: 20.19.26
       '@types/node-cron':
         specifier: ^3.0.11

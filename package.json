@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@types/dockerode": "^3.3.47",
-    "@types/node": "^20.11.24",
+    "@types/node": "^20.19.26",
     "@types/node-cron": "^3.0.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
