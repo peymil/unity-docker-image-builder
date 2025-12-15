@@ -14,6 +14,7 @@ RUN pnpm install --frozen-lockfile
 # Copy source code and build the app
 COPY src/ ./src/
 COPY tsconfig.json ./
+COPY docker ./docker/
 RUN pnpm build
 
 # The docker:dind entrypoint will start the Docker daemon, then run the CMD
