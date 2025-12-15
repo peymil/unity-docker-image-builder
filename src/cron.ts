@@ -12,7 +12,7 @@ const DOCKER_HUB_REPO = process.env.DOCKER_HUB_REPO || 'editor';
 const scheduler = new BuildScheduler();
 
 export const startCronJob = () => {
-  cron.schedule('*/5 * * * *', async () => {
+  cron.schedule('*/1 * * * *', async () => {
     try {
       logger.info('Starting cron job...');
 

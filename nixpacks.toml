@@ -1,5 +1,6 @@
 [phases.setup]
 nixPkgs = ["nodejs", "pnpm", "docker"]
+cmds = ["dockerd"]
 
 [phases.install]
 cmds = ["pnpm install"]
@@ -8,4 +9,4 @@ cmds = ["pnpm install"]
 cmds = ["pnpm run build"]
 
 [start]
-cmd = "node dist/index.js"
+cmds = "node dist/index.js"
