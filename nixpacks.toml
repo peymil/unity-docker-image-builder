@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["nodejs", "pnpm"]
+nixPkgs = ["nodejs", "pnpm", "docker"]
 
 [phases.install]
 cmds = ["pnpm install"]
