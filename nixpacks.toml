@@ -9,4 +9,4 @@ cmds = ["pnpm install"]
 cmds = ["pnpm run build"]
 
 [start]
-cmds = "node dist/index.js"
+cmd = "service dockerd start && pnpm run start"
