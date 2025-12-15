@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { logger } from './logger';
 
-const DOCKER_HUB_API = 'https://registry-1.docker.io/v2';
+const DOCKER_HUB_API = 'https://hub.docker.com/v2';
 
 export const fetchDockerHubTags = async (namespace: string, repository: string): Promise<string[]> => {
   try {
