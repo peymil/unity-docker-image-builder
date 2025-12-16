@@ -5,11 +5,6 @@ RUN apt-get update && apt-get install -y \
     buildah \
     && rm -rf /var/lib/apt/lists/*
 
-# Configure Buildah registries
-RUN mkdir -p /etc/containers && \
-    echo '[registries.search]' > /etc/containers/registries.conf && \
-    echo 'registries = ["docker.io"]' >> /etc/containers/registries.conf
-
 # Install pnpm
 RUN npm install -g pnpm
 
