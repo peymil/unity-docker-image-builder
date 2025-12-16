@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["nodejs", "pnpm", "docker"]
+nixPkgs = ["nodejs", "pnpm", "buildah"]
 
 [phases.install]
 cmds = ["pnpm install"]
@@ -8,4 +8,4 @@ cmds = ["pnpm install"]
 cmds = ["pnpm run build"]
 
 [start]
-cmd = "service dockerd start && pnpm run start"
+cmd = "pnpm run start"
