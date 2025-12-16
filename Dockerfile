@@ -5,6 +5,9 @@ RUN apt-get update && apt-get install -y \
     buildah \
     && rm -rf /var/lib/apt/lists/*
 
+# Create containers policy.json for Buildah
+RUN mkdir -p /etc/containers && echo '{"default":[{"type":"insecureAcceptAnything"}],"transports":{"docker-daemon":{"":[{"type":"insecureAcceptAnything"}]}}}' > /etc/containers/policy.json
+
 # Install pnpm
 RUN npm install -g pnpm
 
