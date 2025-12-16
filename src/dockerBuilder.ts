@@ -18,6 +18,7 @@ export const buildAndPushImage = async (
     'bud',
     '--build-arg',
     `version=${version}`,
+    '--isolation=chroot',
     '--build-arg',
     `changeSet=${changeSet}`,
     '--build-arg',
