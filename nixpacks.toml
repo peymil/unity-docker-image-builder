@@ -1,5 +1,6 @@
 [phases.setup]
 nixPkgs = ["nodejs", "pnpm", "buildah"]
+cmds = ["mkdir -p /etc/containers", "echo '{\"default\":[{\"type\":\"insecureAcceptAnything\"}],\"transports\":{\"docker-daemon\":{\"\":[{\"type\":\"insecureAcceptAnything\"}]}}}' > /etc/containers/policy.json"]
 
 [phases.install]
 cmds = ["pnpm install"]
