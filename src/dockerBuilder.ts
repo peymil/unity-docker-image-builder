@@ -5,6 +5,7 @@ import { spawn } from 'child_process';
 export const buildAndPushImage = async (
   version: string,
   changeSet: string,
+  module: string,
   namespace: string,
   repository: string,
 ): Promise<void> => {
@@ -22,7 +23,7 @@ export const buildAndPushImage = async (
     '--build-arg',
     `changeSet=${changeSet}`,
     '--build-arg',
-    'module=base',
+    `module=${module}`,
     '-t',
     imageName,
     contextPath,
