@@ -11,8 +11,16 @@ const DOCKER_HUB_REPO = process.env.DOCKER_HUB_REPO || 'editor';
 
 const scheduler = new BuildScheduler();
 
+let isRunning = false;
+
 export const startCronJob = () => {
   cron.schedule('*/1 * * * *', async () => {
+    if (isRunning) {
+      logger.info('Previous cron job still running, skipping this run');
+      return;
+    }
+
+    isRunning = true;
     try {
       logger.info('Starting cron job...');
 
@@ -42,6 +50,8 @@ export const startCronJob = () => {
       logger.info('Cron job completed');
     } catch (error) {
       logger.error(error, 'Cron job failed');
+    } finally {
+      isRunning = false;
     }
   });
 
