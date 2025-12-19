@@ -30,7 +30,7 @@ export const startCronJob = () => {
       for (const job of batch) {
         scheduler.markBuilding(job.version);
         try {
-          await buildAndPushImage(job.version, job.changeSet, DOCKER_HUB_NAMESPACE, DOCKER_HUB_REPO);
+          await buildAndPushImage(job.version, job.changeSet, 'base', DOCKER_HUB_NAMESPACE, DOCKER_HUB_REPO);
           scheduler.markCompleted(job.version);
           logger.info({event: 'build_and_push_success', unity_version: job.version},`Successfully built and pushed ${job.version}`);
         } catch (error) {
